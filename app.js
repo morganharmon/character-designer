@@ -69,7 +69,7 @@ catchphraseButton.addEventListener('click', () => {
     catchphrasesArr.push(catchVal);
 
     // clear out the form input's value so it's empty to the user
-    catchphraseInput.textContent = '';
+    catchphraseInput.value = '';
    
     // update the dom to show the new catchphrases (refactor to/call displayCatchphrases to do this work)
     displayCatchphrases();
@@ -86,7 +86,12 @@ function displayCatchphrases() {
     catchphrasesEl.textContent = '';
 
     // loop through each catchphrase in state
-    // for (let )
+    for (let val of catchphrasesArr) {
+        const htmlEl = document.createElement('p');
+        const htmlNode = document.createTextNode(val);
+        htmlEl.appendChild(htmlNode);
+        catchphrasesEl.appendChild(htmlEl);
+    }
    
     // and for each catchphrase
     
