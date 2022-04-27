@@ -88,8 +88,7 @@ function displayCatchphrases() {
     // loop through each catchphrase in state
     for (let val of catchphrasesArr) {
         const htmlEl = document.createElement('p');
-        const htmlNode = document.createTextNode(val);
-        htmlEl.appendChild(htmlNode);
+        htmlEl.textContent = val
         catchphrasesEl.appendChild(htmlEl);
     }
    
