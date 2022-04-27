@@ -26,8 +26,7 @@ headDropdown.addEventListener('change', () => {
     headCount++;
 
     // update the dom for the head (use style.backgroundImage on the headEl div instead of trying to set the .src -- it's NOT an img tag!)
-    headEl.style.backgroundImage = (`./assets/${headDropdown.value}-head.png`);
-
+    headEl.style.backgroundImage = `url("./assets/${headVal}-head.png")`;
     // update the stats to show the new count (call displayStats() to do this work)
     displayStats();
 });
@@ -41,7 +40,7 @@ middleDropdown.addEventListener('change', () => {
     middleCount++;
     
     // update the dom for the middle (NOTE: use style.backgroundImage on the middleEl div instead of trying to set the .src -- it's NOT an img tag!)
-    middleEl.style.backgroundImage = (`./assets/${middleDropdown.value}-middle.png`);
+    middleEl.style.backgroundImage = `url("./assets/${middleVal}-middle.png")`;
 
     // update the stats to show the new count (call displayStats() to do this work)
     displayStats();
@@ -56,7 +55,7 @@ bottomDropdown.addEventListener('change', () => {
     bottomCount++;
     
     // update the dom for the bottom (NOTE use style.backgroundImage on the bottomEl div instead of trying to set the .src -- it's NOT an img tag!)
-    bottomEl.style.backgroundImage = ('./assets/${bottomDropdown.value}-pants.png');
+    bottomEl.style.backgroundImage = `url("./assets/${bottomVal}-pants.png")`;
 
     // update the stats to show the new count (call displayStats() to do this work)
     displayStats();
@@ -64,12 +63,16 @@ bottomDropdown.addEventListener('change', () => {
 
 catchphraseButton.addEventListener('click', () => {
     // get the value of the catchphrase input
+    let catchVal = catchphraseInput.value;
     
     // push the new catchphrase to the catchphrase array in state
+    catchphrasesArr.push(catchVal);
 
     // clear out the form input's value so it's empty to the user
+    catchphraseInput.textContent = '';
    
     // update the dom to show the new catchphrases (refactor to/call displayCatchphrases to do this work)
+    displayCatchphrases();
 
 });
 
@@ -80,8 +83,10 @@ function displayStats() {
 
 function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases
+    catchphrasesEl.textContent = '';
 
     // loop through each catchphrase in state
+    // for (let )
    
     // and for each catchphrase
     
